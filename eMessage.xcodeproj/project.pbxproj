@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401BAFEC22E9964A00AEC09A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401BAFEB22E9964900AEC09A /* ChatViewController.swift */; };
+		401BAFEE22E99A4800AEC09A /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401BAFED22E99A4800AEC09A /* MessageModel.swift */; };
 		4075189922E6044A00D0F266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4075189822E6044A00D0F266 /* AppDelegate.swift */; };
 		407518A022E6044D00D0F266 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4075189F22E6044D00D0F266 /* Assets.xcassets */; };
 		407518A322E6044D00D0F266 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407518A122E6044D00D0F266 /* LaunchScreen.storyboard */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		401BAFEB22E9964900AEC09A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		401BAFED22E99A4800AEC09A /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		4075189522E6044A00D0F266 /* eMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4075189822E6044A00D0F266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4075189F22E6044D00D0F266 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				407518BB22E605E900D0F266 /* ListViewController.xib */,
 				407518B922E605E900D0F266 /* LoginViewController.swift */,
 				407518BC22E605E900D0F266 /* LoginViewController.xib */,
+				401BAFEB22E9964900AEC09A /* ChatViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			children = (
 				407518B622E605DF00D0F266 /* DatabaseRepresentation.swift */,
 				407518B522E605DF00D0F266 /* User.swift */,
+				401BAFED22E99A4800AEC09A /* MessageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,8 +280,10 @@
 				407518B322E605D600D0F266 /* UIView+Additions.swift in Sources */,
 				4075189922E6044A00D0F266 /* AppDelegate.swift in Sources */,
 				407518B822E605DF00D0F266 /* DatabaseRepresentation.swift in Sources */,
+				401BAFEE22E99A4800AEC09A /* MessageModel.swift in Sources */,
 				407518B422E605D600D0F266 /* UIColor+Additions.swift in Sources */,
 				407518C222E6064B00D0F266 /* AppSettings.swift in Sources */,
+				401BAFEC22E9964A00AEC09A /* ChatViewController.swift in Sources */,
 				407518BE22E605E900D0F266 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
