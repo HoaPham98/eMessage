@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
     
     // Kiểm tra nếu login rồi thì chuyển luôn sang màn list
     func checkLogined() {
-        if let uid = AppSettings.uid, !uid.isEmpty {
+        if Auth.auth().currentUser != nil {
             let vc = UINavigationController(rootViewController: ListViewController())
             DispatchQueue.main.async {
                 self.present(vc, animated: false, completion: nil)

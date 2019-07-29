@@ -19,6 +19,13 @@ struct UserModel {
         self.username = username
     }
     
+    init?(snapshot: DataSnapshot) {
+        let dict = snapshot.value as! [String: Any?]
+        
+        self.uid = snapshot.key
+        self.username = dict["username"] as! String
+    }
+    
 }
 
 extension UserModel: DatabaseRepresentation {

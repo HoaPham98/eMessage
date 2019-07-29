@@ -18,7 +18,7 @@ class ListViewController: UIViewController {
     
     var userRef: DatabaseReference!
     var ref: DatabaseReference!
-    var users = [User]()
+    var users = [UserModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +26,26 @@ class ListViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.largeTitleDisplayMode = .always
-        self.navigationItem.title = "Users"
+        self.navigationItem.title = AppSettings.username
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(onLogout))
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        
+        self.ref = Database.database().reference().child("users")
+        
+        
+        ref.observe(.childAdded) { (snapshot) in
+            if let user = UserModel.init(snapshot: snapshot) {
+            
+                if user.uid == AppSettings.uid {
+                    return
+                }
+                self.users.append(user)
+                self.tableView.reloadData()
+            }
+        }
         
         loadData()
     }
@@ -48,12 +62,12 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        cell.textLabel?.text = "Hello"
+        cell.textLabel?.text = self.users[indexPath.row].username
         
         return cell
     }
