@@ -39,6 +39,7 @@ class ListViewController: UIViewController {
         ref.observe(.childAdded) { (snapshot) in
             if let user = UserModel.init(snapshot: snapshot) {
             
+                // Chỉ cho những user có uid khác với uid của mình
                 if user.uid == AppSettings.uid {
                     return
                 }
@@ -74,5 +75,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Tapped item \(indexPath.row)")
+        
+        let vc = ChatViewController(with: self.users[indexPath.row])
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
